@@ -14,7 +14,7 @@ WebService::JotForm - Perl interface to JotForm's API -- currently only the read
 
 =head1 VERSION
 
-Version 0.004
+Version 0.005
 
 =head1 SYNOPSIS
 	
@@ -51,7 +51,7 @@ More information on tokens is available in the L<JotForm API Documentation|http:
 
 =cut
 
-our $VERSION = '0.004';
+our $VERSION = '0.005';
 
 has 'apiKey'  		=> ( is => 'ro', required => 1);
 has 'apiBase' 		=> ( is => 'ro', default => 'https://api.jotform.com');
@@ -90,15 +90,15 @@ Accepts the following parameters:
 
 Required parameter.  JotForm apiKey
 
-= item * apiBase
+=item * apiBase
 
 Optional parameter - defaults to: 'https://api.jotform.com'
 
-= item * apiVersion
+=item * apiVersion
 
 Optional parameter - defaults to 'v1'
 
-= item * agent
+=item * agent
 
 Agent that acts like LWP::UserAgent used for making requests -- module defaults to creating its own if none is provide
 
@@ -201,7 +201,7 @@ sub get_user_logout {
 	return $self->_get("user/logout");
 }
 
-=head2 <get_user_settings()
+=head2 get_user_settings()
 
 	$jotform->get_user_settings();
 
@@ -217,7 +217,8 @@ sub get_user_settings {
 
 	$jotform->get_user_history();
 
-Get a list of forms for this account. Includes basic details such as title of the form, when it was created, number of new and total submissions.
+User activity log about things like forms created/modified/deleted, account logins and other operations.
+
 
 =cut
 
@@ -319,7 +320,7 @@ sub get_form_reports {
 	return $self->_get("form/$form_id/reports"); 
 }
 
-=head2 (get_form_files($id)
+=head2 get_form_files($id)
 
 	$jotform->get_form_files($id);
 
