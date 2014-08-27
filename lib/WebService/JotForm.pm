@@ -14,7 +14,7 @@ WebService::JotForm - Perl interface to JotForm's API -- currently only the read
 
 =head1 VERSION
 
-Version 0.005
+Version 0.006
 
 =head1 SYNOPSIS
 	
@@ -51,7 +51,7 @@ More information on tokens is available in the L<JotForm API Documentation|http:
 
 =cut
 
-our $VERSION = '0.005';
+our $VERSION = '0.006';
 
 has 'apiKey'  		=> ( is => 'ro', required => 1);
 has 'apiBase' 		=> ( is => 'ro', default => 'https://api.jotform.com');
@@ -377,7 +377,7 @@ sub get_form_submissions {
 sub get_submission {
 	my ($self, $sub_id) = @_;
 	croak "No submission id provided to get_submission" if !$sub_id;
-	return $self->_get("form/submission/$sub_id"); 
+	return $self->_get("submission/$sub_id");
 }
 
 =head2 get_report($id)
