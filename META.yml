@@ -3,6 +3,7 @@ abstract: "Perl interface to JotForm's API -- currently only the read operations
 author:
   - 'Tim Vroom <vroom@blockstackers.com>'
 build_requires:
+  Test::Deep: '0'
   Test::More: '0'
 configure_requires:
   ExtUtils::MakeMaker: '0'
@@ -23,4 +24,4 @@ requires:
   LWP::UserAgent: '0'
   Moo: '0'
   perl: '5.006'
-version: '0.009'
+version: '0.010'

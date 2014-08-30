@@ -22,6 +22,7 @@
    "prereqs" : {
       "build" : {
          "requires" : {
+            "Test::Deep" : "0",
             "Test::More" : "0"
          }
       },
@@ -41,5 +42,5 @@
       }
    },
    "release_status" : "stable",
-   "version" : "0.009"
+   "version" : "0.010"
 }
