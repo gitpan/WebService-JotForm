@@ -21,10 +21,7 @@
    },
    "prereqs" : {
       "build" : {
-         "requires" : {
-            "Test::Deep" : "0",
-            "Test::More" : "0"
-         }
+         "requires" : {}
       },
       "configure" : {
          "requires" : {
@@ -37,10 +34,24 @@
             "JSON::Any" : "0",
             "LWP::UserAgent" : "0",
             "Moo" : "0",
+            "URI::Escape" : "0",
             "perl" : "5.006"
+         }
+      },
+      "test" : {
+         "requires" : {
+            "Test::Deep" : "0",
+            "Test::More" : "0"
          }
       }
    },
    "release_status" : "stable",
-   "version" : "0.012"
+   "resources" : {
+      "repository" : {
+         "type" : "git",
+         "url" : "https://github.com/tvroom/WebService-JotForm",
+         "web" : "https://github.com/tvroom/WebService-JotForm.git"
+      }
+   },
+   "version" : "0.013"
 }

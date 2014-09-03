@@ -23,5 +23,8 @@ requires:
   JSON::Any: '0'
   LWP::UserAgent: '0'
   Moo: '0'
+  URI::Escape: '0'
   perl: '5.006'
-version: '0.012'
+resources:
+  repository: https://github.com/tvroom/WebService-JotForm
+version: '0.013'
