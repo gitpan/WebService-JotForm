@@ -1,5 +1,5 @@
 {
-   "abstract" : "Perl interface to JotForm's API -- currently only the read operations, not creating or deleting data ",
+   "abstract" : "Perl interface to JotForm's API -- currently only the read operations are fully supported.",
    "author" : [
       "Tim Vroom <vroom@blockstackers.com>"
    ],
@@ -53,5 +53,5 @@
          "web" : "https://github.com/tvroom/WebService-JotForm.git"
       }
    },
-   "version" : "0.013"
+   "version" : "0.014"
 }
