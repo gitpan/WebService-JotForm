@@ -16,7 +16,7 @@ Support for create, update, and delete operations are beginning to be added in t
 
 =head1 VERSION
 
-Version 0.014
+Version 0.015
 
 =head1 SYNOPSIS
 	
@@ -53,7 +53,7 @@ More information on tokens is available in the L<JotForm API Documentation|http:
 
 =cut
 
-our $VERSION = '0.014';
+our $VERSION = '0.015';
 
 has 'apiKey'  		=> ( is => 'ro', required => 1);
 has 'apiBase' 		=> ( is => 'ro', default => 'https://api.jotform.com');
@@ -304,6 +304,45 @@ sub get_user_forms {
 	my ($self, $params) = @_;
 	return $self->_get("user/forms", $params);
 }
+
+=head2 create_forms($params);
+
+	$jotform->create_forms($params);
+
+Add new forms with questions, properties and email settings.
+
+
+=cut
+
+sub create_forms {
+	my $self = shift;
+	my $params = shift;
+	$params ||= {};
+
+	return $self->_post("user/forms", $params);
+}
+
+=head2 create_form($params);
+
+	$jotform->create_form($params);
+
+Add new form with questions, properties and email settings.
+
+
+=cut
+
+sub create_form {
+	my $self = shift;
+	my $params = shift;
+	$params ||= {};
+
+	return $self->_post("/form", $params);
+}
+
+
+=head2 get_form($id)
+
+
 
 =head2 get_form($id)
 
