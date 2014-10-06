@@ -16,7 +16,7 @@ Support for create, update, and delete operations are beginning to be added in t
 
 =head1 VERSION
 
-Version 0.018
+Version 0.019
 
 =head1 SYNOPSIS
 	
@@ -53,7 +53,7 @@ More information on tokens is available in the L<JotForm API Documentation|http:
 
 =cut
 
-our $VERSION = '0.018';
+our $VERSION = '0.019';
 
 has 'apiKey'  		=> ( is => 'ro', required => 1);
 has 'apiBase' 		=> ( is => 'ro', default => 'https://api.jotform.com');
@@ -515,6 +515,24 @@ sub get_form_reports {
 	my ($self, $form_id) = @_;
 	croak "No form id provided to get_form_reports" if !$form_id;
 	return $self->_get("form/$form_id/reports"); 
+}
+
+=head2 create_form_report($form_id, { title => $title, list_type => $list_type });
+
+	$jotform->create_form_report($form_id, { title => $title, list_type => "csv" });
+	$jotform->create_form_report($form_id, { title => $title, list_type => "csv", "fields=ip,dt,1" });
+
+	Create new report of a form with intended fields, type and title.
+
+=cut 
+
+sub create_form_report{
+	my($self, $form_id, $params) = @_;
+	$params ||= {};
+	croak "No form id provided to create_form_report" if !$form_id;
+	croak "title and list_type required parameters to create_form_report" if !$params->{title} || !$params->{list_type};
+
+	return $self->_post("form/$form_id/reports", $params);
 }
 
 =head2 get_form_files($id)
